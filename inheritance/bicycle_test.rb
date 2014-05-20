@@ -3,13 +3,18 @@ require_relative 'bicycle'
 
 class MyTest < Test::Unit::TestCase
 
-  attr_reader :road,:defaultBike
+  attr_reader :road,:defaultBike,:mountainBike
 
   # Called before every test method runs. Can be used
   # to set up fixture information.
   def setup
-    @road = RoadBike.new({size: 12,tape_color: "blue",tire_size: 3.0})
-    @defaultBike = RoadBike.new({})
+
+    bikeSizes = {size: 12,tire_size: 3.0}
+    @road = RoadBike.new(bikeSizes.merge({tape_color: "blue"}))
+    @mountainBike = MountainBike.new(bikeSizes.merge({front_shock: 20,rear_shock: 30}))
+
+  #  @mountain_bike = MountainBike.new({})
+
 
   end
 
@@ -19,11 +24,16 @@ class MyTest < Test::Unit::TestCase
     # Do nothing
   end
 
-  def test_tire_size
-    assert_equal(3.0,road.tire_size)
+  def test_road_bike
+    assert_equal(3.0,@road.tire_size)
+    assert_equal("blue",@road.tape_color)
   end
 
-  def test_default_tire_size
-    assert_equal(2.1,@defaultBike.tire_size)
+  def test_mountain_bike
+    assert_equal(20,@mountainBike.front_shock)
+    assert_equal(30,@mountainBike.rear_shock)
+
   end
+
+
 end

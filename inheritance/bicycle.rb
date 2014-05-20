@@ -11,7 +11,6 @@ traits.
 =end
 
 class Bicycle
-  #All of these parameters are included in any bike.
   attr_reader :size,:chain,:tire_size
 
    def initialize(args = {})
@@ -41,6 +40,11 @@ class Bicycle
   def default_tire_size
     raise NotImplementedError,
           "This #{self.class} cannot respond to default tire size"
+  end
+
+  def default_chain
+    raise NotImplementedError,
+          "default chain not implemented in sub class"
   end
 
 end
@@ -82,6 +86,10 @@ class MountainBike < Bicycle
 
   def local_spares
     {rear_shock: @rear_shock}
+  end
+
+  def default_chain
+    "12-Speed"
   end
 
   def default_tire_size
