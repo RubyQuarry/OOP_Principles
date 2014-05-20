@@ -11,10 +11,10 @@ traits.
 =end
 
 class Bicycle
+  #All of these parameters are included in any bike.
   attr_reader :size,:chain,:tire_size
 
-  #All of these argumnets are included in a bike.
-  def initialize(args = {})
+   def initialize(args = {})
     @size = args.fetch(:size, 0)
     @chain = args.fetch(:chain, default_chain)
     @tire_size = args.fetch(:tire_size, default_tire_size)
