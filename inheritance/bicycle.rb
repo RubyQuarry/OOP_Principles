@@ -39,12 +39,12 @@ class Bicycle
   #Error if subclass does not implement default.
   def default_tire_size
     raise NotImplementedError,
-          "This #{self.class} cannot respond to default tire size"
+          'default_tire_size cannot respond to default tire size'
   end
 
   def default_chain
     raise NotImplementedError,
-          "default chain not implemented in sub class"
+          'default chain not implemented in sub class'
   end
 
 end
