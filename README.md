@@ -6,7 +6,7 @@ The goal of this repository is meant to show good object oriented practices impl
 The Ruby [style guide](https://github.com/styleguide/ruby) and [TomDoc](http://tomdoc.org/)
 code documentation are in use.
 
-
+Clone and contribute!
 
 
 
